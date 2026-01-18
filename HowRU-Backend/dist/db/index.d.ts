@@ -1,0 +1,126 @@
+declare const sql: import("@neondatabase/serverless").NeonQueryFunction<false, false>;
+export { sql };
+export declare function getUserByPhone(phone: string): Promise<Record<string, any>>;
+export declare function getUserById(id: string): Promise<Record<string, any>>;
+export declare function getUserByEmail(email: string): Promise<Record<string, any>>;
+export declare function createUser(data: {
+    phoneNumber: string;
+    name: string;
+    isChecker?: boolean;
+}): Promise<Record<string, any>>;
+export declare function updateUserLocation(userId: string, latitude: number, longitude: number, address: string | null, locationAt: Date): Promise<void>;
+export declare function createCheckIn(data: {
+    userId: string;
+    mentalScore: number;
+    bodyScore: number;
+    moodScore: number;
+    latitude?: number;
+    longitude?: number;
+    locationName?: string;
+    address?: string;
+    isManual?: boolean;
+    timestamp?: Date;
+}): Promise<Record<string, any>>;
+export declare function getTodayCheckIn(userId: string, timezone?: string): Promise<Record<string, any>>;
+export declare function getRecentCheckIns(userId: string, limit?: number): Promise<Record<string, any>[]>;
+export declare function getActiveSchedule(userId: string): Promise<Record<string, any>>;
+export declare function createSchedule(data: {
+    userId: string;
+    windowStartHour?: number;
+    windowEndHour?: number;
+    timezone?: string;
+    gracePeriodMinutes?: number;
+}): Promise<Record<string, any>>;
+export declare function getCircleLinks(checkerId: string): Promise<Record<string, any>[]>;
+export declare function getSupportedUsers(supporterId: string): Promise<Record<string, any>[]>;
+export declare function createAlert(data: {
+    checkerId: string;
+    checkerName: string;
+    type: 'reminder' | 'soft' | 'hard' | 'escalation';
+    missedWindowAt: Date;
+    lastCheckinAt?: Date;
+    lastKnownLocation?: string;
+    notifiedSupporterIds?: string[];
+}): Promise<Record<string, any>>;
+export declare function getActiveAlerts(checkerId: string): Promise<Record<string, any>[]>;
+export declare function resolveAlerts(checkerId: string): Promise<void>;
+export declare function saveRefreshToken(userId: string, tokenHash: string, expiresAt: Date): Promise<void>;
+export declare function getRefreshToken(tokenHash: string): Promise<Record<string, any>>;
+export declare function deleteRefreshToken(tokenHash: string): Promise<void>;
+export declare function deleteUserRefreshTokens(userId: string): Promise<void>;
+export declare function createCircleLink(data: {
+    checkerId: string;
+    supporterId?: string;
+    supporterDisplayName: string;
+    supporterPhone?: string;
+    supporterEmail?: string;
+    canSeeMood?: boolean;
+    canSeeLocation?: boolean;
+    canSeeSelfie?: boolean;
+    canPoke?: boolean;
+    alertPriority?: number;
+    alertViaPush?: boolean;
+    alertViaSms?: boolean;
+    alertViaEmail?: boolean;
+}): Promise<Record<string, any>>;
+export declare function updateCircleLink(linkId: string, checkerId: string, data: {
+    supporterDisplayName?: string;
+    canSeeMood?: boolean;
+    canSeeLocation?: boolean;
+    canSeeSelfie?: boolean;
+    canPoke?: boolean;
+    alertPriority?: number;
+    alertViaPush?: boolean;
+    alertViaSms?: boolean;
+    alertViaEmail?: boolean;
+}): Promise<Record<string, any>>;
+export declare function removeCircleLink(linkId: string, checkerId: string): Promise<void>;
+export declare function getCircleLinkById(linkId: string): Promise<Record<string, any>>;
+export declare function createInvite(data: {
+    inviterId: string;
+    code: string;
+    role: 'checker' | 'supporter';
+    canSeeMood?: boolean;
+    canSeeLocation?: boolean;
+    canSeeSelfie?: boolean;
+    canPoke?: boolean;
+    expiresAt: Date;
+}): Promise<Record<string, any>>;
+export declare function getInviteByCode(code: string): Promise<Record<string, any>>;
+export declare function acceptInvite(code: string, acceptedById: string): Promise<Record<string, any>>;
+export declare function getInvitesByUser(userId: string): Promise<Record<string, any>[]>;
+export declare function createPoke(data: {
+    fromUserId: string;
+    toUserId: string;
+    message?: string;
+}): Promise<Record<string, any>>;
+export declare function getPokesForUser(userId: string, limit?: number): Promise<Record<string, any>[]>;
+export declare function getUnseenPokesCount(userId: string): Promise<number>;
+export declare function markPokeSeen(pokeId: string, userId: string): Promise<void>;
+export declare function markPokeResponded(pokeId: string, userId: string): Promise<void>;
+export declare function getAlertsForSupporter(supporterId: string): Promise<Record<string, any>[]>;
+export declare function acknowledgeAlert(alertId: string, supporterId: string): Promise<Record<string, any>>;
+export declare function resolveAlert(alertId: string, supporterId: string, resolution: string, notes?: string): Promise<Record<string, any>>;
+export declare function escalateAlert(alertId: string, newType: string): Promise<Record<string, any>>;
+export declare function updateUser(userId: string, data: {
+    name?: string;
+    email?: string;
+    profileImageUrl?: string;
+    address?: string;
+}): Promise<Record<string, any>>;
+export declare function updateSchedule(userId: string, data: {
+    windowStartHour?: number;
+    windowStartMinute?: number;
+    windowEndHour?: number;
+    windowEndMinute?: number;
+    timezone?: string;
+    activeDays?: number[];
+    gracePeriodMinutes?: number;
+    reminderEnabled?: boolean;
+    reminderMinutesBefore?: number;
+}): Promise<Record<string, any>>;
+export declare function savePushToken(userId: string, token: string, platform: 'ios' | 'android', deviceId?: string): Promise<void>;
+export declare function getPushTokensForUser(userId: string): Promise<Record<string, any>[]>;
+export declare function deletePushToken(userId: string, token: string): Promise<void>;
+export declare function getSubscription(userId: string): Promise<Record<string, any>>;
+//# sourceMappingURL=index.d.ts.map

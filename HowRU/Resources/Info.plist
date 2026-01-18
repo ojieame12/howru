@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSCameraUsageDescription</key>
+	<string>HowRU uses the camera to capture a snapshot for your check-ins.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>HowRU needs access to your photo library to let you choose a profile photo.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Recoleta Light.otf</string>
+		<string>Recoleta Regular.otf</string>
+		<string>Recoleta Medium.otf</string>
+		<string>Recoleta SemiBold.otf</string>
+		<string>Geist Regular.ttf</string>
+		<string>Geist Medium.ttf</string>
+		<string>Geist SemiBold.ttf</string>
+	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<true/>
+	</dict>
+	<key>UILaunchScreen</key>
+	<dict/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.howru.app</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>howru</string>
+			</array>
+		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>tel</string>
+		<string>sms</string>
+	</array>
+</dict>
+</plist>

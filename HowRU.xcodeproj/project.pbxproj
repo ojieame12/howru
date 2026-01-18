@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06CE2067B2D1FE5435CF2271 /* PokeComposerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1A41D5F9095764A49F077 /* PokeComposerSheet.swift */; };
+		0A63BA980A072646FF5F9DB8 /* CheckInPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23671642B355B1481CFAF08F /* CheckInPromptView.swift */; };
+		16450CB6CF2D70B37A2D40F1 /* CheckInState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE18B48A3150EF4D25D4C4F /* CheckInState.swift */; };
+		1A463E15BB615A751313C1C0 /* CheckInDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7942D43E5619844B099A7EA2 /* CheckInDoneView.swift */; };
+		1FD6722C3826C8E4B9C74EED /* CheckerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D1C316B1172A0C8BF97FF /* CheckerDetailView.swift */; };
+		2A43243BAB31987941E1F447 /* SnapshotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1775FCEBDB18BDB540BD3 /* SnapshotService.swift */; };
+		2DB4589F3ED44F8FD8AF17F3 /* CheckInSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23E662387F17835CB8489B0 /* CheckInSlider.swift */; };
+		3C81443AB0C8F925784EBCBA /* DataExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EDB71F44590A809B5DE536 /* DataExportService.swift */; };
+		3E1A4EFB6810A21864932FF5 /* SnapshotThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C964C5A586F8BA8B2FC9DE7 /* SnapshotThumbnail.swift */; };
+		5EF6366FEFDAB1B51F62BAC9 /* PokeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F140D835F1C6A1ABDB42C27 /* PokeService.swift */; };
+		5FA3FEAB3FC0B0D359C60B7B /* CheckInFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232588BEF8A3F2C47D0C3EDA /* CheckInFormView.swift */; };
+		61DE28EBD3E0DF25315CF84B /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE9DF9F7B290008C08D028D /* ProfileEditView.swift */; };
+		6399A2CB8EFB496A3AA8AA34 /* SnapshotCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50938DE64D04D3A8A3F2500E /* SnapshotCaptureView.swift */; };
+		65FBF029CCB5B62CE250F0AA /* CheckInCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432D9A35666752738F3751C9 /* CheckInCompleteView.swift */; };
+		7DF3290AF0B6272FBB3EBCDF /* EnhancedNotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535C6315F09499E91A62FA5F /* EnhancedNotificationSettingsView.swift */; };
+		8FE63BBE575F1548B3860260 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101DD0A3A3353A3ED0891766 /* ScheduleService.swift */; };
+		9B2A9D578BF742370D0A10D3 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA151B50143DAAE424E85C9F /* AlertService.swift */; };
+		A10000000000000000000001 /* HowRUApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* HowRUApp.swift */; };
+		A10000000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* ContentView.swift */; };
+		A10000000000000000000003 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* CheckInView.swift */; };
+		A10000000000000000000004 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000004 /* OnboardingView.swift */; };
+		A10000000000000000000005 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000005 /* CircleView.swift */; };
+		A10000000000000000000006 /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000006 /* TrendsView.swift */; };
+		A10000000000000000000007 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000007 /* SettingsView.swift */; };
+		A10000000000000000000008 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000008 /* Theme.swift */; };
+		A10000000000000000000010 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000010 /* User.swift */; };
+		A10000000000000000000011 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000011 /* CheckIn.swift */; };
+		A10000000000000000000012 /* CircleLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000012 /* CircleLink.swift */; };
+		A10000000000000000000013 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000013 /* Schedule.swift */; };
+		A10000000000000000000014 /* Poke.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000014 /* Poke.swift */; };
+		A10000000000000000000015 /* AlertEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000015 /* AlertEvent.swift */; };
+		A10000000000000000000020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000020 /* Assets.xcassets */; };
+		A10000000000000000000030 /* Recoleta Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000030 /* Recoleta Light.otf */; };
+		A10000000000000000000031 /* Recoleta Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000031 /* Recoleta Regular.otf */; };
+		A10000000000000000000032 /* Recoleta Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000032 /* Recoleta Medium.otf */; };
+		A10000000000000000000033 /* Recoleta SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000033 /* Recoleta SemiBold.otf */; };
+		A10000000000000000000034 /* Geist Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000034 /* Geist Regular.ttf */; };
+		A10000000000000000000035 /* Geist Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000035 /* Geist Medium.ttf */; };
+		A10000000000000000000036 /* Geist SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000036 /* Geist SemiBold.ttf */; };
+		B12163F17769A25233634728 /* PokeReceivedModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4FB953D71D312A61B135AB /* PokeReceivedModal.swift */; };
+		D0205979335D745F4A803B0D /* AlertReceivedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2040D861999A97A23767BC23 /* AlertReceivedView.swift */; };
+		EAD728CE7B5E93343DC27115 /* ExportDataSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60915ED5C0FC853088FB7C8 /* ExportDataSheet.swift */; };
+		EC55C04D1372171D5C6D9200 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD61E75EF1BD5A9BC449448 /* NotificationService.swift */; };
+		FE7C18408F03830BC94BE359 /* SnapshotPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60440C9B7E80151B0A862388 /* SnapshotPreviewView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		101DD0A3A3353A3ED0891766 /* ScheduleService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
+		1B4FB953D71D312A61B135AB /* PokeReceivedModal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PokeReceivedModal.swift; sourceTree = "<group>"; };
+		2040D861999A97A23767BC23 /* AlertReceivedView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertReceivedView.swift; sourceTree = "<group>"; };
+		20B1775FCEBDB18BDB540BD3 /* SnapshotService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SnapshotService.swift; sourceTree = "<group>"; };
+		22B1A41D5F9095764A49F077 /* PokeComposerSheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PokeComposerSheet.swift; sourceTree = "<group>"; };
+		232588BEF8A3F2C47D0C3EDA /* CheckInFormView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckInFormView.swift; sourceTree = "<group>"; };
+		23671642B355B1481CFAF08F /* CheckInPromptView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckInPromptView.swift; sourceTree = "<group>"; };
+		3AE18B48A3150EF4D25D4C4F /* CheckInState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckInState.swift; sourceTree = "<group>"; };
+		432D9A35666752738F3751C9 /* CheckInCompleteView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckInCompleteView.swift; sourceTree = "<group>"; };
+		50938DE64D04D3A8A3F2500E /* SnapshotCaptureView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SnapshotCaptureView.swift; sourceTree = "<group>"; };
+		535C6315F09499E91A62FA5F /* EnhancedNotificationSettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EnhancedNotificationSettingsView.swift; sourceTree = "<group>"; };
+		5C964C5A586F8BA8B2FC9DE7 /* SnapshotThumbnail.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SnapshotThumbnail.swift; sourceTree = "<group>"; };
+		60440C9B7E80151B0A862388 /* SnapshotPreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SnapshotPreviewView.swift; sourceTree = "<group>"; };
+		6F140D835F1C6A1ABDB42C27 /* PokeService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PokeService.swift; sourceTree = "<group>"; };
+		701D1C316B1172A0C8BF97FF /* CheckerDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckerDetailView.swift; sourceTree = "<group>"; };
+		7942D43E5619844B099A7EA2 /* CheckInDoneView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckInDoneView.swift; sourceTree = "<group>"; };
+		A20000000000000000000001 /* HowRUApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowRUApp.swift; sourceTree = "<group>"; };
+		A20000000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A20000000000000000000003 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
+		A20000000000000000000004 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A20000000000000000000005 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		A20000000000000000000006 /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsView.swift; sourceTree = "<group>"; };
+		A20000000000000000000007 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A20000000000000000000008 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A20000000000000000000010 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A20000000000000000000011 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
+		A20000000000000000000012 /* CircleLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLink.swift; sourceTree = "<group>"; };
+		A20000000000000000000013 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		A20000000000000000000014 /* Poke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poke.swift; sourceTree = "<group>"; };
+		A20000000000000000000015 /* AlertEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertEvent.swift; sourceTree = "<group>"; };
+		A20000000000000000000020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A20000000000000000000021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20000000000000000000030 /* Recoleta Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Recoleta Light.otf"; sourceTree = "<group>"; };
+		A20000000000000000000031 /* Recoleta Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Recoleta Regular.otf"; sourceTree = "<group>"; };
+		A20000000000000000000032 /* Recoleta Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Recoleta Medium.otf"; sourceTree = "<group>"; };
+		A20000000000000000000033 /* Recoleta SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Recoleta SemiBold.otf"; sourceTree = "<group>"; };
+		A20000000000000000000034 /* Geist Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist Regular.ttf"; sourceTree = "<group>"; };
+		A20000000000000000000035 /* Geist Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist Medium.ttf"; sourceTree = "<group>"; };
+		A20000000000000000000036 /* Geist SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist SemiBold.ttf"; sourceTree = "<group>"; };
+		A23E662387F17835CB8489B0 /* CheckInSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CheckInSlider.swift; sourceTree = "<group>"; };
+		A30000000000000000000001 /* HowRU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowRU.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5EDB71F44590A809B5DE536 /* DataExportService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataExportService.swift; sourceTree = "<group>"; };
+		C60915ED5C0FC853088FB7C8 /* ExportDataSheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExportDataSheet.swift; sourceTree = "<group>"; };
+		CBE9DF9F7B290008C08D028D /* ProfileEditView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
+		FA151B50143DAAE424E85C9F /* AlertService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		FDD61E75EF1BD5A9BC449448 /* NotificationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A40000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F38D27E1B367D872C970608 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6F140D835F1C6A1ABDB42C27 /* PokeService.swift */,
+				20B1775FCEBDB18BDB540BD3 /* SnapshotService.swift */,
+				FDD61E75EF1BD5A9BC449448 /* NotificationService.swift */,
+				101DD0A3A3353A3ED0891766 /* ScheduleService.swift */,
+				FA151B50143DAAE424E85C9F /* AlertService.swift */,
+				B5EDB71F44590A809B5DE536 /* DataExportService.swift */,
+			);
+			name = Services;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5F4D4E119EE10E3ADF5C2A03 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				A23E662387F17835CB8489B0 /* CheckInSlider.swift */,
+				3AE18B48A3150EF4D25D4C4F /* CheckInState.swift */,
+				23671642B355B1481CFAF08F /* CheckInPromptView.swift */,
+				232588BEF8A3F2C47D0C3EDA /* CheckInFormView.swift */,
+				432D9A35666752738F3751C9 /* CheckInCompleteView.swift */,
+				7942D43E5619844B099A7EA2 /* CheckInDoneView.swift */,
+			);
+			name = CheckIn;
+			path = CheckIn;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A50000000000000000000002 /* HowRU */,
+				A50000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A50000000000000000000002 /* HowRU */ = {
+			isa = PBXGroup;
+			children = (
+				A50000000000000000000010 /* Sources */,
+				A50000000000000000000020 /* Resources */,
+			);
+			path = HowRU;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A30000000000000000000001 /* HowRU.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000010 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A50000000000000000000011 /* App */,
+				A50000000000000000000012 /* Models */,
+				A50000000000000000000013 /* Views */,
+				A50000000000000000000014 /* Theme */,
+				5F38D27E1B367D872C970608 /* Services */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000011 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000001 /* HowRUApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000012 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000010 /* User.swift */,
+				A20000000000000000000011 /* CheckIn.swift */,
+				A20000000000000000000012 /* CircleLink.swift */,
+				A20000000000000000000013 /* Schedule.swift */,
+				A20000000000000000000014 /* Poke.swift */,
+				A20000000000000000000015 /* AlertEvent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000013 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000002 /* ContentView.swift */,
+				A20000000000000000000003 /* CheckInView.swift */,
+				A20000000000000000000004 /* OnboardingView.swift */,
+				A20000000000000000000005 /* CircleView.swift */,
+				A20000000000000000000006 /* TrendsView.swift */,
+				A20000000000000000000007 /* SettingsView.swift */,
+				5F4D4E119EE10E3ADF5C2A03 /* CheckIn */,
+				A6C37C6AA6D578C05FA8335E /* Circle */,
+				EC39DF4DF75014074D38F2EE /* Snapshot */,
+				A8E754BA3865F24AC4685341 /* Alerts */,
+				CB520BAE345058F6147F4F99 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000014 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000008 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000020 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000020 /* Assets.xcassets */,
+				A20000000000000000000021 /* Info.plist */,
+				A50000000000000000000021 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A50000000000000000000021 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A20000000000000000000030 /* Recoleta Light.otf */,
+				A20000000000000000000031 /* Recoleta Regular.otf */,
+				A20000000000000000000032 /* Recoleta Medium.otf */,
+				A20000000000000000000033 /* Recoleta SemiBold.otf */,
+				A20000000000000000000034 /* Geist Regular.ttf */,
+				A20000000000000000000035 /* Geist Medium.ttf */,
+				A20000000000000000000036 /* Geist SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A6C37C6AA6D578C05FA8335E /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				701D1C316B1172A0C8BF97FF /* CheckerDetailView.swift */,
+				22B1A41D5F9095764A49F077 /* PokeComposerSheet.swift */,
+				1B4FB953D71D312A61B135AB /* PokeReceivedModal.swift */,
+			);
+			name = Circle;
+			path = Circle;
+			sourceTree = "<group>";
+		};
+		A8E754BA3865F24AC4685341 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				2040D861999A97A23767BC23 /* AlertReceivedView.swift */,
+			);
+			name = Alerts;
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		CB520BAE345058F6147F4F99 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CBE9DF9F7B290008C08D028D /* ProfileEditView.swift */,
+				535C6315F09499E91A62FA5F /* EnhancedNotificationSettingsView.swift */,
+				C60915ED5C0FC853088FB7C8 /* ExportDataSheet.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		EC39DF4DF75014074D38F2EE /* Snapshot */ = {
+			isa = PBXGroup;
+			children = (
+				50938DE64D04D3A8A3F2500E /* SnapshotCaptureView.swift */,
+				60440C9B7E80151B0A862388 /* SnapshotPreviewView.swift */,
+				5C964C5A586F8BA8B2FC9DE7 /* SnapshotThumbnail.swift */,
+			);
+			name = Snapshot;
+			path = Snapshot;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A60000000000000000000001 /* HowRU */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80000000000000000000001 /* Build configuration list for PBXNativeTarget "HowRU" */;
+			buildPhases = (
+				A70000000000000000000001 /* Sources */,
+				A40000000000000000000001 /* Frameworks */,
+				A70000000000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HowRU;
+			productName = HowRU;
+			productReference = A30000000000000000000001 /* HowRU.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A90000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 2610;
+				TargetAttributes = {
+					A60000000000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = A80000000000000000000002 /* Build configuration list for PBXProject "HowRU" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A50000000000000000000001;
+			productRefGroup = A50000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A60000000000000000000001 /* HowRU */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A70000000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000020 /* Assets.xcassets in Resources */,
+				A10000000000000000000030 /* Recoleta Light.otf in Resources */,
+				A10000000000000000000031 /* Recoleta Regular.otf in Resources */,
+				A10000000000000000000032 /* Recoleta Medium.otf in Resources */,
+				A10000000000000000000033 /* Recoleta SemiBold.otf in Resources */,
+				A10000000000000000000034 /* Geist Regular.ttf in Resources */,
+				A10000000000000000000035 /* Geist Medium.ttf in Resources */,
+				A10000000000000000000036 /* Geist SemiBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A70000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001 /* HowRUApp.swift in Sources */,
+				A10000000000000000000002 /* ContentView.swift in Sources */,
+				A10000000000000000000003 /* CheckInView.swift in Sources */,
+				A10000000000000000000004 /* OnboardingView.swift in Sources */,
+				A10000000000000000000005 /* CircleView.swift in Sources */,
+				A10000000000000000000006 /* TrendsView.swift in Sources */,
+				A10000000000000000000007 /* SettingsView.swift in Sources */,
+				A10000000000000000000008 /* Theme.swift in Sources */,
+				A10000000000000000000010 /* User.swift in Sources */,
+				A10000000000000000000011 /* CheckIn.swift in Sources */,
+				A10000000000000000000012 /* CircleLink.swift in Sources */,
+				A10000000000000000000013 /* Schedule.swift in Sources */,
+				A10000000000000000000014 /* Poke.swift in Sources */,
+				A10000000000000000000015 /* AlertEvent.swift in Sources */,
+				2DB4589F3ED44F8FD8AF17F3 /* CheckInSlider.swift in Sources */,
+				16450CB6CF2D70B37A2D40F1 /* CheckInState.swift in Sources */,
+				0A63BA980A072646FF5F9DB8 /* CheckInPromptView.swift in Sources */,
+				5FA3FEAB3FC0B0D359C60B7B /* CheckInFormView.swift in Sources */,
+				65FBF029CCB5B62CE250F0AA /* CheckInCompleteView.swift in Sources */,
+				1A463E15BB615A751313C1C0 /* CheckInDoneView.swift in Sources */,
+				1FD6722C3826C8E4B9C74EED /* CheckerDetailView.swift in Sources */,
+				06CE2067B2D1FE5435CF2271 /* PokeComposerSheet.swift in Sources */,
+				B12163F17769A25233634728 /* PokeReceivedModal.swift in Sources */,
+				5EF6366FEFDAB1B51F62BAC9 /* PokeService.swift in Sources */,
+				6399A2CB8EFB496A3AA8AA34 /* SnapshotCaptureView.swift in Sources */,
+				FE7C18408F03830BC94BE359 /* SnapshotPreviewView.swift in Sources */,
+				3E1A4EFB6810A21864932FF5 /* SnapshotThumbnail.swift in Sources */,
+				2A43243BAB31987941E1F447 /* SnapshotService.swift in Sources */,
+				D0205979335D745F4A803B0D /* AlertReceivedView.swift in Sources */,
+				EC55C04D1372171D5C6D9200 /* NotificationService.swift in Sources */,
+				8FE63BBE575F1548B3860260 /* ScheduleService.swift in Sources */,
+				9B2A9D578BF742370D0A10D3 /* AlertService.swift in Sources */,
+				61DE28EBD3E0DF25315CF84B /* ProfileEditView.swift in Sources */,
+				7DF3290AF0B6272FBB3EBCDF /* EnhancedNotificationSettingsView.swift in Sources */,
+				EAD728CE7B5E93343DC27115 /* ExportDataSheet.swift in Sources */,
+				3C81443AB0C8F925784EBCBA /* DataExportService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B10000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58J4BTAH95;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HowRU/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HowRU;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "HowRU uses your camera for optional selfies to share with your circle.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "HowRU uses your location to share your last known area with your circle when you check in.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanonimiya.howru;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B10000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58J4BTAH95;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HowRU/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HowRU;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "HowRU uses your camera for optional selfies to share with your circle.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "HowRU uses your location to share your last known area with your circle when you check in.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanonimiya.howru;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B20000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		B20000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A80000000000000000000001 /* Build configuration list for PBXNativeTarget "HowRU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B10000000000000000000001 /* Debug */,
+				B10000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80000000000000000000002 /* Build configuration list for PBXProject "HowRU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B20000000000000000000001 /* Debug */,
+				B20000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A90000000000000000000001 /* Project object */;
+}
