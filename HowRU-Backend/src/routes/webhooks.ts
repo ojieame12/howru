@@ -1,5 +1,4 @@
 import { Router, Request, Response } from 'express';
-import crypto from 'crypto';
 import { sql } from '../db/index.js';
 
 const router = Router();
@@ -26,39 +25,19 @@ interface RevenueCatEvent {
 
 router.post('/revenuecat', async (req: Request, res: Response) => {
   try {
-    // Verify webhook signature (recommended for production)
+    // Verify webhook using Authorization header
     if (REVENUECAT_WEBHOOK_SECRET) {
-      const signature = req.headers['x-revenuecat-signature'] as string | undefined;
+      const authHeader = req.headers['authorization'] as string | undefined;
 
-      if (!signature) {
-        console.warn('RevenueCat webhook received without signature');
-        return res.status(401).json({ error: 'Missing signature' });
+      if (!authHeader) {
+        console.warn('RevenueCat webhook received without authorization header');
+        return res.status(401).json({ error: 'Missing authorization' });
       }
 
-      // RevenueCat uses HMAC-SHA256 for webhook signatures
-      // The signature is computed over the raw request body (captured by express.json verify)
-      const rawBody = (req as any).rawBody as Buffer | undefined;
-
-      if (!rawBody) {
-        console.error('Raw body not available for signature verification');
-        return res.status(500).json({ error: 'Server configuration error' });
-      }
-
-      const expectedSignature = crypto
-        .createHmac('sha256', REVENUECAT_WEBHOOK_SECRET)
-        .update(rawBody)
-        .digest('hex');
-
-      // Constant-time comparison to prevent timing attacks
-      const signatureBuffer = Buffer.from(signature, 'hex');
-      const expectedBuffer = Buffer.from(expectedSignature, 'hex');
-
-      if (
-        signatureBuffer.length !== expectedBuffer.length ||
-        !crypto.timingSafeEqual(signatureBuffer, expectedBuffer)
-      ) {
-        console.warn('RevenueCat webhook signature mismatch');
-        return res.status(401).json({ error: 'Invalid signature' });
+      // Compare the Authorization header with our secret
+      if (authHeader !== REVENUECAT_WEBHOOK_SECRET) {
+        console.warn('RevenueCat webhook authorization mismatch');
+        return res.status(401).json({ error: 'Invalid authorization' });
       }
     }
 
