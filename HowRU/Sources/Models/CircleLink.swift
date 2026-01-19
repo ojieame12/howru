@@ -36,6 +36,7 @@ final class CircleLink {
     // Sync fields
     var syncId: String?              // Server-assigned ID for this circle link
     var checkerServerId: String?     // Server user ID of the checker (for pokes)
+    var checkerPhone: String?        // Checker's phone number (for call actions on synced alerts)
     var supporterServerId: String?   // Server user ID of the supporter (for pokes)
     var syncStatusRaw: String        // Raw string for SyncStatus (SwiftData compatible)
     var syncedAt: Date?              // Last successful sync timestamp
@@ -54,7 +55,7 @@ final class CircleLink {
         supporterName: String,
         canSeeMood: Bool = true,
         canSeeLocation: Bool = false,
-        canSeeSelfie: Bool = true,
+        canSeeSelfie: Bool = false,  // Default matches backend
         canPoke: Bool = true,
         alertViaPush: Bool = true,
         alertViaSMS: Bool = false,
@@ -64,6 +65,7 @@ final class CircleLink {
         acceptedAt: Date? = nil,
         syncId: String? = nil,
         checkerServerId: String? = nil,
+        checkerPhone: String? = nil,
         supporterServerId: String? = nil,
         syncStatus: SyncStatus = .new,
         syncedAt: Date? = nil
@@ -86,6 +88,7 @@ final class CircleLink {
         self.acceptedAt = acceptedAt
         self.syncId = syncId
         self.checkerServerId = checkerServerId
+        self.checkerPhone = checkerPhone
         self.supporterServerId = supporterServerId
         self.syncStatusRaw = syncStatus.rawValue
         self.syncedAt = syncedAt

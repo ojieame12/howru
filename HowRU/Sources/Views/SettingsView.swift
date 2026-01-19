@@ -164,7 +164,7 @@ struct SettingsView: View {
                     Button(role: .destructive) {
                         showDeleteConfirmation = true
                     } label: {
-                        Label("Delete Account", systemImage: "trash")
+                        Label("Remove Account", systemImage: "trash")
                     }
                 }
             }
@@ -182,13 +182,13 @@ struct SettingsView: View {
             .sheet(isPresented: $showExportData) {
                 ExportDataSheet(user: user)
             }
-            .alert("Delete Account?", isPresented: $showDeleteConfirmation) {
+            .alert("Sign Out & Remove Data?", isPresented: $showDeleteConfirmation) {
                 Button("Cancel", role: .cancel) {}
-                Button("Delete", role: .destructive) {
+                Button("Remove", role: .destructive) {
                     deleteAccount()
                 }
             } message: {
-                Text("This will permanently delete your account and all data. This cannot be undone.")
+                Text("This will sign you out and remove all local data from this device. Your account data on our servers will be retained for 30 days before permanent deletion.")
             }
         }
     }

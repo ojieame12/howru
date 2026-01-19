@@ -202,7 +202,7 @@ final class UserSyncService {
             let base64Image = imageData.base64EncodedString()
             let body = UploadAvatarBody(
                 imageData: base64Image,
-                mimeType: "image/jpeg"
+                contentType: "image/jpeg"
             )
 
             let response: UploadResponse = try await apiClient.post("/uploads/avatar", body: body)

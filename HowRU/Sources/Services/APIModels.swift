@@ -549,15 +549,6 @@ struct OfferingsResponse: Decodable {
     let offerings: [APIPlanOffering]
 }
 
-/// Response from GET /billing/entitlements
-struct EntitlementsResponse: Decodable {
-    let success: Bool
-    let plan: String
-    let status: String
-    let expiresAt: Date?
-    let limits: APIFeatureLimits
-}
-
 // MARK: - Upload Models
 
 /// Response from file upload
@@ -571,13 +562,13 @@ struct UploadResponse: Decodable {
 struct UploadSelfieBody: Encodable {
     let checkinId: String
     let imageData: String  // base64-encoded
-    let mimeType: String
+    let contentType: String  // e.g. "image/jpeg"
 }
 
 /// Request body for avatar upload (base64 JSON)
 struct UploadAvatarBody: Encodable {
     let imageData: String  // base64-encoded
-    let mimeType: String
+    let contentType: String  // e.g. "image/jpeg"
 }
 
 // MARK: - Export Models

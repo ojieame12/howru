@@ -53,14 +53,27 @@ final class AlertSyncService {
                 predicate: #Predicate { $0.isChecker == true }
             )
             let users = try modelContext.fetch(userFetch)
-            let currentUserId = users.first?.id ?? UUID()
+            guard let currentUser = users.first else {
+                syncError = "No local user found"
+                return 0
+            }
+            let currentUserId = currentUser.id
+
+            // Fetch all existing alerts once (O(n) instead of O(n^2))
+            // Use reduce to handle potential duplicate syncIds gracefully (keeps first occurrence)
+            let existingAlerts = try modelContext.fetch(FetchDescriptor<AlertEvent>())
+            let alertsBySyncId = existingAlerts.reduce(into: [String: AlertEvent]()) { dict, alert in
+                guard let syncId = alert.syncId else { return }
+                if dict[syncId] == nil {
+                    dict[syncId] = alert
+                }
+            }
 
             var syncedCount = 0
 
             for apiAlert in response.alerts {
                 // Check if we already have this alert locally
-                let existingAlerts = try modelContext.fetch(FetchDescriptor<AlertEvent>())
-                let existingAlert = existingAlerts.first { $0.syncId == apiAlert.id }
+                let existingAlert = alertsBySyncId[apiAlert.id]
 
                 if let alert = existingAlert {
                     // Update existing alert - including level for escalation changes

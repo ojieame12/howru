@@ -95,7 +95,7 @@ final class CheckInSyncService {
             let body = UploadSelfieBody(
                 checkinId: syncId,
                 imageData: base64Image,
-                mimeType: "image/jpeg"
+                contentType: "image/jpeg"
             )
 
             let _: UploadResponse = try await apiClient.post("/uploads/selfie", body: body)
@@ -116,12 +116,11 @@ final class CheckInSyncService {
 
     // MARK: - Download Operations
 
-    /// Download check-ins from server since a given date
-    /// - Parameters:
-    ///   - since: Only fetch check-ins after this date (nil for all)
-    ///   - modelContext: SwiftData context
+    /// Download check-ins from server
+    /// - Parameter modelContext: SwiftData context
     /// - Returns: Number of new/updated check-ins
-    func downloadCheckIns(since: Date? = nil, modelContext: ModelContext) async -> Int {
+    /// - Note: Backend does not support filtering by date; returns all check-ins
+    func downloadCheckIns(modelContext: ModelContext) async -> Int {
         guard AuthManager.shared.isAuthenticated else {
             syncError = "Not authenticated"
             return 0
@@ -132,13 +131,7 @@ final class CheckInSyncService {
         defer { isSyncing = false }
 
         do {
-            var queryItems: [URLQueryItem]? = nil
-            if let since = since {
-                let formatter = ISO8601DateFormatter()
-                queryItems = [URLQueryItem(name: "since", value: formatter.string(from: since))]
-            }
-
-            let response: CheckInsResponse = try await apiClient.get("/checkins", queryItems: queryItems)
+            let response: CheckInsResponse = try await apiClient.get("/checkins")
 
             var syncedCount = 0
 
@@ -279,8 +272,8 @@ final class CheckInSyncService {
         // First, upload any pending check-ins
         let uploaded = await syncPendingCheckIns(modelContext: modelContext)
 
-        // Then download any new check-ins from server
-        let downloaded = await downloadCheckIns(since: lastSyncedAt, modelContext: modelContext)
+        // Then download any check-ins from server (backend returns all)
+        let downloaded = await downloadCheckIns(modelContext: modelContext)
 
         if AppConfig.shared.isLoggingEnabled {
             print("Full sync complete: uploaded \(uploaded), downloaded \(downloaded)")

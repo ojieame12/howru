@@ -283,10 +283,17 @@ struct MainTabView: View {
     }
 
     private func callHandler(for alert: AlertEvent) -> (() -> Void)? {
-        // Try to get phone from CircleLink first (for synced alerts)
+        // Try to get phone from CircleLink (for synced alerts)
         if let link = circleLink(for: alert) {
-            // For synced alerts, we might not have a local checker User
-            // Check if link has a checker with phone, or use supporterPhone as fallback
+            // First try checkerPhone (synced from server)
+            if let phone = link.checkerPhone, !phone.isEmpty {
+                return {
+                    if let url = URL(string: "tel://\(phone)") {
+                        UIApplication.shared.open(url)
+                    }
+                }
+            }
+            // Fallback to local checker User's phone
             if let phone = link.checker?.phoneNumber, !phone.isEmpty {
                 return {
                     if let url = URL(string: "tel://\(phone)") {

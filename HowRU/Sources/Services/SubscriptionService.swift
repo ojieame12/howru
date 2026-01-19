@@ -293,10 +293,11 @@ final class SubscriptionService {
         guard AuthManager.shared.isAuthenticated else { return }
 
         do {
-            let response: EntitlementsResponse = try await APIClient.shared.get("/billing/entitlements")
+            // Backend uses /subscriptions/me endpoint
+            let response: SubscriptionResponse = try await APIClient.shared.get("/subscriptions/me")
 
             // Update current tier based on server response
-            switch response.plan {
+            switch response.subscription.plan {
             case "plus":
                 currentTier = .plus
             case "family":
@@ -309,7 +310,7 @@ final class SubscriptionService {
             serverLimits = response.limits
 
             if AppConfig.shared.isLoggingEnabled {
-                print("[Subscription] Fetched entitlements from server: \(response.plan)")
+                print("[Subscription] Fetched entitlements from server: \(response.subscription.plan)")
             }
         } catch {
             if AppConfig.shared.isLoggingEnabled {

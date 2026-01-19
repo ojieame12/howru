@@ -22,6 +22,7 @@ final class Poke {
 
     // Sync fields
     var syncId: String?              // Server-assigned ID
+    var fromSupporterServerId: String?  // Server user ID of the sender (for matching to CircleLink)
     var syncStatusRaw: String        // Raw string for SyncStatus (SwiftData compatible)
     var syncedAt: Date?              // Last successful sync timestamp
 
@@ -40,6 +41,7 @@ final class Poke {
         respondedAt: Date? = nil,
         message: String? = nil,
         syncId: String? = nil,
+        fromSupporterServerId: String? = nil,
         syncStatus: SyncStatus = .new,
         syncedAt: Date? = nil
     ) {
@@ -52,6 +54,7 @@ final class Poke {
         self.respondedAt = respondedAt
         self.message = message
         self.syncId = syncId
+        self.fromSupporterServerId = fromSupporterServerId
         self.syncStatusRaw = syncStatus.rawValue
         self.syncedAt = syncedAt
     }

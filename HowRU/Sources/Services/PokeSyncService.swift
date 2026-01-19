@@ -92,30 +92,57 @@ final class PokeSyncService {
                 return 0
             }
 
+            // Fetch all existing pokes and circle links once (O(n) instead of O(n^2))
+            // Use reduce to handle potential duplicate syncIds gracefully
+            let existingPokes = try modelContext.fetch(FetchDescriptor<Poke>())
+            let pokesBySyncId = existingPokes.reduce(into: [String: Poke]()) { dict, poke in
+                guard let syncId = poke.syncId else { return }
+                if dict[syncId] == nil {
+                    dict[syncId] = poke
+                }
+            }
+
+            // Get circle links to map server supporter IDs to local UUIDs
+            let circleLinks = try modelContext.fetch(FetchDescriptor<CircleLink>())
+            let linksBySupporterServerId = circleLinks.reduce(into: [String: CircleLink]()) { dict, link in
+                guard let serverId = link.supporterServerId else { return }
+                if dict[serverId] == nil {
+                    dict[serverId] = link
+                }
+            }
+
             var syncedCount = 0
 
             for apiPoke in response.pokes {
-                // Check if we already have this poke locally
-                let existingPokes = try modelContext.fetch(FetchDescriptor<Poke>())
-                let existingPoke = existingPokes.first { $0.syncId == apiPoke.id }
-
-                if existingPoke == nil {
-                    // Create new local poke from server data
-                    let newPoke = Poke(
-                        fromSupporterId: UUID(), // We'd need to map server ID to local UUID
-                        fromName: apiPoke.fromName ?? "Someone",
-                        toCheckerId: currentUser.id,
-                        sentAt: apiPoke.sentAt,
-                        seenAt: apiPoke.seenAt,
-                        respondedAt: apiPoke.respondedAt,
-                        message: apiPoke.message,
-                        syncId: apiPoke.id,
-                        syncStatus: .synced,
-                        syncedAt: Date()
-                    )
-                    modelContext.insert(newPoke)
-                    syncedCount += 1
+                // Skip if we already have this poke locally
+                if pokesBySyncId[apiPoke.id] != nil {
+                    continue
                 }
+
+                // Try to map server supporter ID to local supporter
+                var localSupporterId = UUID() // Placeholder if not found
+                if let fromUserId = apiPoke.fromUserId,
+                   let circleLink = linksBySupporterServerId[fromUserId],
+                   let supporter = circleLink.supporter {
+                    localSupporterId = supporter.id
+                }
+
+                // Create new local poke from server data
+                let newPoke = Poke(
+                    fromSupporterId: localSupporterId,
+                    fromName: apiPoke.fromName ?? "Someone",
+                    toCheckerId: currentUser.id,
+                    sentAt: apiPoke.sentAt,
+                    seenAt: apiPoke.seenAt,
+                    respondedAt: apiPoke.respondedAt,
+                    message: apiPoke.message,
+                    syncId: apiPoke.id,
+                    fromSupporterServerId: apiPoke.fromUserId,  // Store for future reference
+                    syncStatus: .synced,
+                    syncedAt: Date()
+                )
+                modelContext.insert(newPoke)
+                syncedCount += 1
             }
 
             try modelContext.save()

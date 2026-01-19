@@ -150,7 +150,9 @@ final class CircleSyncService {
 
                 if let link = existingLink {
                     // Update existing link
+                    link.supporter = currentUser  // Backfill for legacy links that may have nil supporter
                     link.checkerServerId = apiSupported.checkerId  // Store checker's server user ID for pokes
+                    link.checkerPhone = apiSupported.phone  // Store checker's phone for call actions
                     link.canSeeMood = apiSupported.permissions.canSeeMood
                     link.canSeeLocation = apiSupported.permissions.canSeeLocation
                     link.canSeeSelfie = apiSupported.permissions.canSeeSelfie
@@ -169,6 +171,7 @@ final class CircleSyncService {
                         canPoke: apiSupported.permissions.canPoke,
                         syncId: apiSupported.id,
                         checkerServerId: apiSupported.checkerId,  // Store checker's server user ID for pokes
+                        checkerPhone: apiSupported.phone,  // Store checker's phone for call actions
                         syncStatus: .synced,
                         syncedAt: Date()
                     )
